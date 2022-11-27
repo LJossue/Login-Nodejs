@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200;500;700;800&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/bb6e6f56c3.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="resources/css/style.css">
+  <link rel="stylesheet" href="resources/css/normalize.css">
+  <title>Registro</title>
+</head>
+
+<body>
+  <main class="diseñologin">
+    <div class="izquierda">
+      <img src="resources/registro.png" alt="login" width="50%">
+    </div>
+    <div class="login">
+      <div class="login-data">
+        <h1>Registrarse</h1>
+        <form action="/register" method="post" class="login-form">
+          <div class="input-group">
+            <label class="input-fill">
+              <input type="text" name="name" id="name" required>
+              <span class="input-label">Nombre</span>
+              <i class="fa-solid fa-user"></i>
+            </label>
+          </div>
+          <div class="input-group">
+            <label class="input-fill">
+              <input type="email" name="user" id="email" required>
+              <span class="input-label">Correo Electronico</span>
+              <i class="fa-solid fa-envelope"></i>
+            </label>
+          </div>
+          <div class="input-group">
+            <label class="input-fill">
+              <input type="password" name="pass" id="password" required>
+              <span class="input-label">Contraseña</span>
+              <i class="fa-solid fa-lock"></i>
+            </label>
+          </div>
+          <div>
+            <a href="/login">¿Ya tienes una cuenta?</a>
+            <input type="submit" value="Registrarse" class="btn-login">
+          </div>
+        </form>
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <% if(typeof alert !="undefined" ) { %>
+          <script>
+            Swal.fire({
+              title: "<%= alertTitle %>",
+              text: "<%= alertMessage %>",
+              icon: "<%= alertIcon %>",
+              showConfirmButton: <%= showConfirmButton%>,
+              timer: "<%= timer %>"
+              }).then(() => {
+
+                window.location = "<%= ruta %>"
+              })
+          </script>
+          <% } %>
+      </div>
+    </div>
+  </main>
+
+</body>
+
+</html>
