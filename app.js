@@ -59,7 +59,7 @@ app.post("/register", async (req, res) => {
           alertIcon: "success",
           showConfirmButton: false,
           timer: 1500,
-          ruta: "/index",
+          ruta: "/",
         });
       }
     }
